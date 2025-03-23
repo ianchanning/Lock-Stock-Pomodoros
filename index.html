@@ -41,25 +41,34 @@
         border-top: 1px solid #ddd;
         padding: 0.625rem 1rem;
       }
+      fieldset {
+        padding: 0.625rem 1rem;
+        border: none;
+      }
       input,
       textarea,
       select,
       button {
+        border: 1px solid #ddd;
+        border-radius: 4px;
         font-family: system-ui, sans-serif;
         font-size: 1rem;
-        padding: 0.375rem 0.75rem;
+        padding: 0.5rem 1rem;
         line-height: 1.5;
       }
       label,
       button {
         margin-top: 10px;
+        margin-right: 10px;
+      }
+      button {
+        background: #f5f5f5;
+      }
+      button:hover {
+        background: #e5e5e5;
       }
       label {
         display: block;
-      }
-      fieldset {
-        padding: 0.625rem 1rem;
-        border: none;
       }
       input,
       textarea {
@@ -131,6 +140,7 @@
                 type="text"
                 value="25"
                 disabled
+                readonly
                 title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall"
               />
               <span class="separator">:</span>
@@ -140,6 +150,7 @@
                 type="text"
                 value="00"
                 disabled
+                readonly
                 title="tick... tick... tick..."
               />
               <span class="separator">&nbsp;</span>
@@ -149,6 +160,7 @@
                 type="text"
                 value="00"
                 disabled
+                readonly
                 title="I swear I did, like, 5 pomodoros in a row once"
               />
               <a href="javascript:void(0);" id="reminder">+</a>
@@ -172,6 +184,11 @@
       </form>
     </div>
     <blockquote class="reminder">
+      <blockquote>
+        &ldquo;I know, lets build a pomodoro timer with quotes from Lock
+        Stock.&rdquo;
+        <figcaption>&mdash; No-one ever
+      </blockquote>
       <p>
         <a href="http://pomodorotechnique.com/get-started/">Reminder</a> to
         self:
@@ -204,22 +221,8 @@
         distraction list afterward. Fire purifies all sins, including your
         impulse to reorganize the fridge <em>mid-task</em>.&rdquo;
       </p>
-      <h3>Final Note:</h3>
-      <p>
-        The Pomodoro Technique isn&rsquo;t a productivity hack&mdash;it&rsquo;s
-        a <strong>bare-knuckle brawl with your own mediocrity</strong>.
-        You&rsquo;ll lose rounds. You&rsquo;ll cheat. You&rsquo;ll reset the
-        timer 8 times to finish this sentence. But hey&mdash;at least
-        you&rsquo;re not scrolling LinkedIn pretending &ldquo;networking&rdquo;
-        isn&rsquo;t corporate voyeurism.
-      </p>
     </blockquote>
     <div class="notifications">
-      <blockquote>
-        &ldquo;I know, lets build a pomodoro timer with quotes from Lock
-        Stock.&rdquo;
-        <figcaption>&mdash; No-one ever
-      </blockquote>
     </div>
     <audio id="alarm">
       <source src="audio/alarm-clock-01.mp3" type="audio/mpeg" />
