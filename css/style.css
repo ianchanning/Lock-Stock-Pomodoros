@@ -2,36 +2,123 @@
 /*html,body,div,span,applet,object,iframe, h1,h2,h3,h4,h5,h6,p,blockquote,pre, a,abbr,acronym,address,big,cite,code, del,dfn,em,font,img,ins,kbd,q,s,samp, small,strike,strong,sub,sup,tt,var, dl,dt,dd,ol,ul,li, fieldset,form,label,legend, table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}*/
 
 /* http://bettermotherfuckingwebsite.com/ */
-html{background-color: #c7d1dc;}
-body{margin:40px auto;max-width:680px;line-height:1.6;font-size:18px;color:#444;padding:0; border-radius: 2px;}
-h1,h2,h3{line-height:1.2}
+html {
+  background-color: #c7d1dc;
+}
+body {
+  margin: 40px auto;
+  max-width: 680px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #444;
+  padding: 0;
+  border-radius: 2px;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
 
 /* style.css */
-h1 {font-size: 25px}
-.reminder{display: none; padding: 0 30px;}
-.chker{text-align: center; padding: 1px;}
-.chker > .clock{border-radius: 6px; font-family: sans-serif; padding: 0; width: 80%; margin: 70px auto; text-align: center; line-height: 1.0; font-weight: 100;}
+h1 {
+  font-size: 25px;
+}
+.reminder {
+  display: none;
+  padding: 0 30px;
+}
+.chker {
+  text-align: center;
+  padding: 1px;
+}
+.chker > .clock {
+  border-radius: 6px;
+  font-family: sans-serif;
+  padding: 0;
+  width: 80%;
+  margin: 70px auto;
+  text-align: center;
+  line-height: 1;
+  font-weight: 100;
+}
 /*@link https://dribbble.com/shots/1012575--Freebie-Timer*/
 /*light*/
-body{background-color:#f3f3f3;}
-.chker > .clock{background-color: #e5e5e5; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset, 0 3px 0 #ffffff; color: #343b45;/* text-shadow: 0px 0px 4px #fff; */}
+body {
+  background-color: #f3f3f3;
+}
+.chker > .clock {
+  background-color: #e5e5e5;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.1) inset,
+    0 3px 0 #ffffff;
+  color: #343b45; /* text-shadow: 0px 0px 4px #fff; */
+}
 
-.chker > .clock > .time {font-size:500%; letter-spacing: -8px;}
-.chker > .clock > .time > .pomo {font-size:50%; letter-spacing: -4px}
-.chker > .clock > .chk{font-size:250%;}
-.chker > .clock > ul {margin: 10px auto 0; text-transform: uppercase; letter-spacing: -1px; padding: 0; display: inline-block; font-weight: 500; font-family: sans-serif;}
-.chker > .clock > ul > li {font-size: 70%; float: left; list-style: none;}
-.chker > .clock > ul > li > a {padding: 0 22px;}
-.chker > .clock a {text-decoration: none; text-shadow: none;}
-.chker > .clock a, .chker > .clock a:visited {color: #ccc;}
-.chker > .clock a.active, .chker > .clock a.active:visited {color: #343b45; text-shadow: 0px 0px 4px #fff;}
+.chker > .clock > .time {
+  font-size: 500%;
+  letter-spacing: -8px;
+}
+.chker > .clock > .time > .pomo {
+  font-size: 50%;
+  letter-spacing: -4px;
+}
+.chker > .clock > .chk {
+  font-size: 250%;
+}
+.chker > .clock > ul {
+  margin: 10px auto 0;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding: 0;
+  display: inline-block;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+.chker > .clock > ul > li {
+  font-size: 70%;
+  float: left;
+  list-style: none;
+}
+.chker > .clock > ul > li > a {
+  padding: 0 22px;
+}
+.chker > .clock a {
+  text-decoration: none;
+  text-shadow: none;
+}
+.chker > .clock a,
+.chker > .clock a:visited {
+  color: #ccc;
+}
+.chker > .clock a.active,
+.chker > .clock a.active:visited {
+  color: #343b45;
+  text-shadow: 0px 0px 4px #fff;
+}
 /* neon */
 /*.chker > .clock.neon{text-shadow:0 0 10px #3694bb, 0 0 20px #3694bb, 0 0 30px #3694bb, 0 0 40px #28345d, 0 0 70px #28345d, 0 0 80px #28345d, 0 0 100px #28345d, 0 0 150px #28345d;}*/
-.chker > .clock.neon{text-shadow:0 0 5px #3694bb, 0 0 10px #3694bb, 0 0 15px #3694bb, 0 0 20px #28345d, 0 0 35px #28345d, 0 0 40px #28345d, 0 0 50px #28345d, 0 0 75px #28345d;}
+.chker > .clock.neon {
+  text-shadow:
+    0 0 5px #3694bb,
+    0 0 10px #3694bb,
+    0 0 15px #3694bb,
+    0 0 20px #28345d,
+    0 0 35px #28345d,
+    0 0 40px #28345d,
+    0 0 50px #28345d,
+    0 0 75px #28345d;
+}
 /* vintage */
-.chker > .clock.vintage{text-shadow:5px 5px 0 #1592ae, 7px 7px 0 #fff;}
+.chker > .clock.vintage {
+  text-shadow:
+    5px 5px 0 #1592ae,
+    7px 7px 0 #fff;
+}
 /* bug fix to prevent below html moving up and down slightly when the buttons are pressed */
-.buttons {height: 70px;}
+.buttons {
+  height: 70px;
+}
 /**
  * @link http://webdesign.tutsplus.com/tutorials/orman-clarks-chunky-3d-web-buttons-the-css3-version--webdesign-5731
  */
@@ -53,7 +140,7 @@ a.button {
 
 a.button:before,
 a.button:after {
-  content: '';
+  content: "";
   position: absolute;
   left: -1px;
   height: 32px;
@@ -88,8 +175,14 @@ a.gray:visited {
   text-shadow: 0px 1px 0px #fafafa;
 
   background: #eee;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#e2e2e2));
-  background: -moz-linear-gradient(top,  #eee,  #e2e2e2);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#eee),
+    to(#e2e2e2)
+  );
+  background: -moz-linear-gradient(top, #eee, #e2e2e2);
 
   box-shadow: inset 1px 1px 0 #f5f5f5;
 }
@@ -102,18 +195,27 @@ a.gray:visited {
 
 a.gray:hover {
   background: #e2e2e2;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e2e2e2), to(#eee));
-  background: -moz-linear-gradient(top,  #e2e2e2,  #eee);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e2e2e2),
+    to(#eee)
+  );
+  background: -moz-linear-gradient(top, #e2e2e2, #eee);
 }
 /* ACTIVE STATE */
-a.button:active, a.button-activated {
+a.button:active,
+a.button-activated {
   border: none;
   bottom: -4px;
   margin-bottom: 29px;
 
   -webkit-box-shadow: 0 1px 1px #fff;
-  -moz-box-shadow:  0 1px 1px #fff;
-  box-shadow:  1px 1px 0 #fff, inset 0 1px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 1px 1px #fff;
+  box-shadow:
+    1px 1px 0 #fff,
+    inset 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 a.button:active:before,
@@ -127,7 +229,10 @@ a.button-activated:after {
   box-shadow: none;
 }
 
-.notifications {background-color: #fff; padding: 30px;}
+.notifications {
+  background-color: #fff;
+  padding: 30px;
+}
 .notifications p {
   border-left: 3px solid rgba(0, 0, 0, 0.1);
   font-size: 1.5em;

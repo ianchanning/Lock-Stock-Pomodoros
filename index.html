@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lock Stock Pomodoros : ianchanning</title>
     <link href="images/favicon.ico" type="image/x-icon" rel="icon" />
     <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
@@ -18,32 +18,74 @@
           <li><a href="?tom">tom</a></li>
           <li><a href="?rory_breaker">rory</a></li>
         </ul>
-        <span class="time"><span class="min" title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall">25</span>:<span class="sec" title="tick... tick... tick...">00</span> <span class="pomo" title="I swear I did, like, 5 pomodoros in a row once">00</span></span>
+        <span class="time"
+          ><span
+            class="min"
+            title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall"
+            >25</span
+          >:<span class="sec" title="tick... tick... tick...">00</span>
+          <span
+            class="pomo"
+            title="I swear I did, like, 5 pomodoros in a row once"
+            >00</span
+          ></span
+        >
         <a href="javascript:void(0);" id="reminder">+</a>
       </div>
       <div class="buttons">
-        <a href="javascript:void(0);" class="start button gray" title="RSI tip: Space bar works too">Start</a>
-        <a href="javascript:void(0);  " class="stop button gray" title="Hammertime">Stop</a>
+        <a
+          href="javascript:void(0);"
+          class="start button gray"
+          title="RSI tip: Space bar works too"
+          >Start</a
+        >
+        <a
+          href="javascript:void(0);  "
+          class="stop button gray"
+          title="Hammertime"
+          >Stop</a
+        >
       </div>
     </div>
     <div class="reminder">
-      <p><a href="http://pomodorotechnique.com/get-started/">Reminder</a> to self:</p>
+      <p>
+        <a href="http://pomodorotechnique.com/get-started/">Reminder</a> to
+        self:
+      </p>
       <h4>Choose a task you&rsquo;d like to get done</h4>
-      <p>Something big, something small, something you&rsquo;ve been putting off for a million years: it doesn&rsquo;t matter. What matters is that it&rsquo;s something that deserves your full, undivided attention.</p>
+      <p>
+        Something big, something small, something you&rsquo;ve been putting off
+        for a million years: it doesn&rsquo;t matter. What matters is that
+        it&rsquo;s something that deserves your full, undivided attention.
+      </p>
       <h4>Set the pomodoro for 25 minutes</h4>
-      <p>Make a small oath to yourself: I will spend 25 minutes on this task and I will not interrupt myself. You can do it! After all, it&rsquo;s just 25 minutes.</p>
+      <p>
+        Make a small oath to yourself: I will spend 25 minutes on this task and
+        I will not interrupt myself. You can do it! After all, it&rsquo;s just
+        25 minutes.
+      </p>
       <h4>Work on the task until the pomodoro rings</h4>
-      <p>Immerse yourself in the task for the next 25 minutes. If you suddenly realize you have something else you need to do, write the task down on a sheet of paper.</p>
+      <p>
+        Immerse yourself in the task for the next 25 minutes. If you suddenly
+        realize you have something else you need to do, write the task down on a
+        sheet of paper.
+      </p>
     </div>
     <div class="notifications">
-        <p>I know lets build a pomodoro timer with quotes from Lock Stock.<br>&mdash; No-one ever</p>
+      <p>
+        I know lets build a pomodoro timer with quotes from Lock Stock.<br />&mdash;
+        No-one ever
+      </p>
     </div>
     <audio id="alarm">
-      <source src="audio/alarm-clock-01.mp3" type="audio/mpeg">
-      <source src="audio/alarm-clock-01.ogg" type="audio/ogg">
+      <source src="audio/alarm-clock-01.mp3" type="audio/mpeg" />
+      <source src="audio/alarm-clock-01.ogg" type="audio/ogg" />
     </audio>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-3.7.1.min.js"
+    ></script>
     <script type="text/javascript" src="js/hjson.min.js"></script>
     <script type="module" src="js/jquery.main.js"></script>
   </body>
