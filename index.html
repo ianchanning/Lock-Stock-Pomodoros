@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lock Stock Pomodoros : ianchanning</title>
     <link href="images/favicon.ico" type="image/x-icon" rel="icon" />
     <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
@@ -16,31 +16,43 @@
         font-family: system-ui, sans-serif;
         padding: 10px 16px;
       }
-      h1,h2,h3 {
-        line-height: 1.2
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
       }
       a {
         text-decoration: none;
       }
-      h1,h2,h3,h4,h5,h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-weight: normal;
       }
       table {
         border-spacing: 0;
         border-collapse: collapse;
       }
-      th, td {
+      th,
+      td {
         border-top: 1px solid #444;
         padding: 10px 16px;
       }
-      input, textarea, select, button {
+      input,
+      textarea,
+      select,
+      button {
         font-family: system-ui, sans-serif;
         font-size: 18px;
         color: #666;
         padding: 10px 2%;
         line-height: 1.4;
       }
-      label, button {
+      label,
+      button {
         margin-top: 10px;
       }
       label {
@@ -50,7 +62,8 @@
         padding: 10px 16px;
         border: none;
       }
-      input, textarea {
+      input,
+      textarea {
         width: 96%;
       }
       select {
@@ -59,45 +72,47 @@
       label input {
         width: auto;
       }
-ul.tabs {
-  display: flex;
-  padding: 0;
-  margin: 0 0 10px 0;
-  border-bottom: 1px solid #ddd;
-  list-style: none;
-}
+      ul.tabs {
+        display: flex;
+        padding: 0;
+        margin: 0 0 10px 0;
+        border-bottom: 1px solid #ddd;
+        list-style: none;
+      }
 
-ul.tabs li a {
-  padding: 8px 12px;
-  display: inline-block;
-  color: #0275d8;
-}
+      ul.tabs li a {
+        padding: 8px 12px;
+        display: inline-block;
+        color: #0275d8;
+      }
 
-ul.tabs li a.active {
-  border: 1px solid #ddd;
-  border-bottom-color: #fff;
-  margin-bottom: -1px;
-  color: #444;
-}
+      ul.tabs li a.active {
+        border: 1px solid #ddd;
+        border-bottom-color: #fff;
+        margin-bottom: -1px;
+        color: #444;
+      }
 
-ul.tabs li a.disabled {
-  color: #ddd;
-}
+      ul.tabs li a.disabled {
+        color: #ddd;
+      }
 
-.tab-content {
-  display: none;
-}
+      .tab-content {
+        display: none;
+      }
 
-.tab-content.active {
-  display: block;
-}
+      .tab-content.active {
+        display: block;
+      }
     </style>
     <style type="text/css">
       .reminder {
         display: none;
       }
 
-      #min, #sec, #pomo {
+      #min,
+      #sec,
+      #pomo {
         width: 2ch;
       }
 
@@ -106,67 +121,131 @@ ul.tabs li a.disabled {
         color: #ddd;
       }
     </style>
-
   </head>
   <body class="light">
     <div id="chker" class="chker">
       <form>
         <fieldset>
-        <div class="clock">
-          <label>
-            <ul class="tabs">
-              <li><a href="?bacon">Bacon</a></li>
-              <li><a href="?eddie">Eddie</a></li>
-              <li><a href="?soap">Soap</a></li>
-              <li><a href="?tom">Tom</a></li>
-              <li><a href="?rory_breaker">Rory</a></li>
-            </ul>
-          </label>
-          <div class="time">
-            <input id="min" class="min" type="text" value="25" disabled title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall">
-            <span class="separator">:</span>
-            <input id="sec" class="sec" type="text" value="00" disabled title="tick... tick... tick...">
-            <span class="separator">&nbsp;</span>
-            <input id="pomo" class="pomo" type="text" value="00" disabled title="I swear I did, like, 5 pomodoros in a row once">
-            <a href="javascript:void(0);" id="reminder">+</a>
+          <div class="clock">
+            <label>
+              <ul class="tabs">
+                <li><a href="?bacon">Bacon</a></li>
+                <li><a href="?eddie">Eddie</a></li>
+                <li><a href="?soap">Soap</a></li>
+                <li><a href="?tom">Tom</a></li>
+                <li><a href="?rory_breaker">Rory</a></li>
+              </ul>
+            </label>
+            <div class="time">
+              <input
+                id="min"
+                class="min"
+                type="text"
+                value="25"
+                disabled
+                title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall"
+              />
+              <span class="separator">:</span>
+              <input
+                id="sec"
+                class="sec"
+                type="text"
+                value="00"
+                disabled
+                title="tick... tick... tick..."
+              />
+              <span class="separator">&nbsp;</span>
+              <input
+                id="pomo"
+                class="pomo"
+                type="text"
+                value="00"
+                disabled
+                title="I swear I did, like, 5 pomodoros in a row once"
+              />
+              <a href="javascript:void(0);" id="reminder">+</a>
+            </div>
           </div>
-        </div>
         </fieldset>
         <fieldset>
-        <div class="buttons">
-          <button type="button" class="start button gray" title="RSI tip: Space bar works too">Start</button>
-          <button type="button" class="stop button gray" title="Hammertime">Stop</button>
-        </div>
+          <div class="buttons">
+            <button
+              type="button"
+              class="start button gray"
+              title="RSI tip: Space bar works too"
+            >
+              Start
+            </button>
+            <button type="button" class="stop button gray" title="Hammertime">
+              Stop
+            </button>
+          </div>
         </fieldset>
       </form>
     </div>
     <blockquote class="reminder">
-      <p><a href="http://pomodorotechnique.com/get-started/">Reminder</a> to self:</p>
+      <p>
+        <a href="http://pomodorotechnique.com/get-started/">Reminder</a> to
+        self:
+      </p>
       <h3>1. &ldquo;Choose a task you&rsquo;d like to get done&rdquo;</h3>
       <p><em>Translation:</em></p>
-      <p>&ldquo;Pick the thing you&rsquo;ve been avoiding since the Jurassic period. Doesn&rsquo;t matter if it&rsquo;s curing cancer or finally Googling &lsquo;how to adult&rsquo;&mdash;just pick <em>something</em> before your existential dread picks for you. Pro tip: If your to-do list were a person, it&rsquo;d be haunting your nightmares by now.&rdquo;</p>
+      <p>
+        &ldquo;Pick the thing you&rsquo;ve been avoiding since the Jurassic
+        period. Doesn&rsquo;t matter if it&rsquo;s curing cancer or finally
+        Googling &lsquo;how to adult&rsquo;&mdash;just pick
+        <em>something</em> before your existential dread picks for you. Pro tip:
+        If your to-do list were a person, it&rsquo;d be haunting your nightmares
+        by now.&rdquo;
+      </p>
       <h3>2. &ldquo;Set the pomodoro for 25 minutes&rdquo;</h3>
       <p><em>Translation:</em></p>
-      <p>&ldquo;Set a timer for 25 minutes. Yes, <em>that</em> timer. The one you&rsquo;ll stare at like a microwave countdown, bargaining with the universe for a meteor strike to save you from replying to emails. This isn&rsquo;t a &lsquo;small oath&rsquo;&mdash;it&rsquo;s a hostage negotiation with your own attention span. Spoiler: You&rsquo;re both the kidnapper <em>and</em> the negotiator.&rdquo;</p>
+      <p>
+        &ldquo;Set a timer for 25 minutes. Yes, <em>that</em> timer. The one
+        you&rsquo;ll stare at like a microwave countdown, bargaining with the
+        universe for a meteor strike to save you from replying to emails. This
+        isn&rsquo;t a &lsquo;small oath&rsquo;&mdash;it&rsquo;s a hostage
+        negotiation with your own attention span. Spoiler: You&rsquo;re both the
+        kidnapper <em>and</em> the negotiator.&rdquo;
+      </p>
       <h3>3. &ldquo;Work on the task until the pomodoro rings&rdquo;</h3>
       <p><em>Translation:</em></p>
-      <p>&ldquo;Hyperfocus for 25 minutes. Or, more accurately: Spend 15 minutes working, 7 minutes wondering if you&rsquo;re allergic to productivity, and 3 minutes writing down &lsquo;urgent&rsquo; distractions like <em>&lsquo;Why do I own 3 staplers?&rsquo;</em> or <em>&lsquo;Is my plant judging me?&rsquo;</em> Pro move: Burn the distraction list afterward. Fire purifies all sins, including your impulse to reorganize the fridge <em>mid-task</em>.&rdquo;</p>
+      <p>
+        &ldquo;Hyperfocus for 25 minutes. Or, more accurately: Spend 15 minutes
+        working, 7 minutes wondering if you&rsquo;re allergic to productivity,
+        and 3 minutes writing down &lsquo;urgent&rsquo; distractions like
+        <em>&lsquo;Why do I own 3 staplers?&rsquo;</em> or
+        <em>&lsquo;Is my plant judging me?&rsquo;</em> Pro move: Burn the
+        distraction list afterward. Fire purifies all sins, including your
+        impulse to reorganize the fridge <em>mid-task</em>.&rdquo;
+      </p>
       <h3>Final Note:</h3>
-      <p>The Pomodoro Technique isn&rsquo;t a productivity hack&mdash;it&rsquo;s a <strong>bare-knuckle brawl with your own mediocrity</strong>. You&rsquo;ll lose rounds. You&rsquo;ll cheat. You&rsquo;ll reset the timer 8 times to finish this sentence. But hey&mdash;at least you&rsquo;re not scrolling LinkedIn pretending &ldquo;networking&rdquo; isn&rsquo;t corporate voyeurism.</p>
+      <p>
+        The Pomodoro Technique isn&rsquo;t a productivity hack&mdash;it&rsquo;s
+        a <strong>bare-knuckle brawl with your own mediocrity</strong>.
+        You&rsquo;ll lose rounds. You&rsquo;ll cheat. You&rsquo;ll reset the
+        timer 8 times to finish this sentence. But hey&mdash;at least
+        you&rsquo;re not scrolling LinkedIn pretending &ldquo;networking&rdquo;
+        isn&rsquo;t corporate voyeurism.
+      </p>
     </blockquote>
-      <blockquote>
-        &ldquo;I know lets build a pomodoro timer with quotes from Lock Stock.&rdquo;
-        <figcaption>&mdash; No-one ever</figcaption>
-      </blockquote>
+    <blockquote>
+      &ldquo;I know lets build a pomodoro timer with quotes from Lock
+      Stock.&rdquo;
+      <figcaption>&mdash; No-one ever</figcaption>
+    </blockquote>
     <!--<div class="notifications">
         <p>I know lets build a pomodoro timer with quotes from Lock Stock.<br>&mdash; No-one ever</p>
     </div>-->
     <audio id="alarm">
-      <source src="audio/alarm-clock-01.mp3" type="audio/mpeg">
-      <source src="audio/alarm-clock-01.ogg" type="audio/ogg">
+      <source src="audio/alarm-clock-01.mp3" type="audio/mpeg" />
+      <source src="audio/alarm-clock-01.ogg" type="audio/ogg" />
     </audio>
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-3.7.1.min.js"
+    ></script>
     <script type="text/javascript" src="js/hjson.min.js"></script>
     <script type="module" src="js/jquery.main.js"></script>
   </body>
