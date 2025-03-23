@@ -33,8 +33,7 @@ import { chuck } from './chuck.js';
       quotes = Hjson.parse('[' + data + ']');
     });
 
-    $('.clock a').removeClass('active');
-    $(".clock a[href='?" + fileName + "']").addClass('active');
+    $(".tabs a[href='?" + fileName + "']").addClass('active');
 
     Notification.requestPermission();
 
@@ -67,8 +66,11 @@ import { chuck } from './chuck.js';
      * display the timer in the title
      */
     var updateTitle = function () {
-      document.title =
-        timer.find('.time').text() + ' - ' + appName + ' : ' + siteName;
+      var timerText = Array.from(document.querySelector('.time').childNodes)
+        .filter((node) => node.tagName !== 'A')
+        .map((node) => node.value || node.textContent.trim())
+        .join(' ');
+      document.title = timerText + ' - ' + appName + ' : ' + siteName;
     };
 
     /**
@@ -152,13 +154,13 @@ import { chuck } from './chuck.js';
 
       // Append the time to the speaker name, wrapped in a span for easy styling
       return (
-        '<p>' +
+        '<blockquote>&ldquo;' +
         prettyQuote +
-        '<br>&mdash; ' +
+        '&rdquo;<figcaption>&mdash; ' +
         speaker +
-        ' <span class="quote-time">@ ' +
+        ' <cite>@ ' +
         formattedTime +
-        '</span></p>'
+        '</cite></figcaption></blockquote>'
       );
     };
 

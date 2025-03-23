@@ -8,13 +8,13 @@
     <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <style type="text/css">
       body {
-        color: #444;
-        font-size: 18px;
-        margin: 40px auto;
+        color: #333;
+        font-size: 1rem;
+        margin: 2.5rem auto;
         max-width: 720px;
-        line-height: 1.4;
+        line-height: 1.5;
         font-family: system-ui, sans-serif;
-        padding: 10px 16px;
+        padding: 0.625rem 1rem;
       }
       h1,
       h2,
@@ -38,18 +38,17 @@
       }
       th,
       td {
-        border-top: 1px solid #444;
-        padding: 10px 16px;
+        border-top: 1px solid #ddd;
+        padding: 0.625rem 1rem;
       }
       input,
       textarea,
       select,
       button {
         font-family: system-ui, sans-serif;
-        font-size: 18px;
-        color: #666;
-        padding: 10px 2%;
-        line-height: 1.4;
+        font-size: 1rem;
+        padding: 0.375rem 0.75rem;
+        line-height: 1.5;
       }
       label,
       button {
@@ -59,7 +58,7 @@
         display: block;
       }
       fieldset {
-        padding: 10px 16px;
+        padding: 0.625rem 1rem;
         border: none;
       }
       input,
@@ -75,26 +74,17 @@
       ul.tabs {
         display: flex;
         padding: 0;
-        margin: 0 0 10px 0;
-        border-bottom: 1px solid #ddd;
+        margin: 0 0 0.625rem 0;
         list-style: none;
       }
 
       ul.tabs li a {
-        padding: 8px 12px;
+        padding: 0.5rem 1rem;
         display: inline-block;
-        color: #0275d8;
       }
 
       ul.tabs li a.active {
-        border: 1px solid #ddd;
-        border-bottom-color: #fff;
-        margin-bottom: -1px;
-        color: #444;
-      }
-
-      ul.tabs li a.disabled {
-        color: #ddd;
+        color: #333;
       }
 
       .tab-content {
@@ -118,24 +108,22 @@
 
       figcaption {
         font-size: 80%;
-        color: #ddd;
+        color: #999;
       }
     </style>
   </head>
   <body class="light">
     <div id="chker" class="chker">
+      <ul class="tabs">
+        <li><a href="?bacon">Bacon</a></li>
+        <li><a href="?eddie">Eddie</a></li>
+        <li><a href="?soap">Soap</a></li>
+        <li><a href="?tom">Tom</a></li>
+        <li><a href="?rory_breaker">Rory</a></li>
+      </ul>
       <form>
         <fieldset>
           <div class="clock">
-            <label>
-              <ul class="tabs">
-                <li><a href="?bacon">Bacon</a></li>
-                <li><a href="?eddie">Eddie</a></li>
-                <li><a href="?soap">Soap</a></li>
-                <li><a href="?tom">Tom</a></li>
-                <li><a href="?rory_breaker">Rory</a></li>
-              </ul>
-            </label>
             <div class="time">
               <input
                 id="min"
@@ -189,7 +177,6 @@
         self:
       </p>
       <h3>1. &ldquo;Choose a task you&rsquo;d like to get done&rdquo;</h3>
-      <p><em>Translation:</em></p>
       <p>
         &ldquo;Pick the thing you&rsquo;ve been avoiding since the Jurassic
         period. Doesn&rsquo;t matter if it&rsquo;s curing cancer or finally
@@ -199,7 +186,6 @@
         by now.&rdquo;
       </p>
       <h3>2. &ldquo;Set the pomodoro for 25 minutes&rdquo;</h3>
-      <p><em>Translation:</em></p>
       <p>
         &ldquo;Set a timer for 25 minutes. Yes, <em>that</em> timer. The one
         you&rsquo;ll stare at like a microwave countdown, bargaining with the
@@ -209,7 +195,6 @@
         kidnapper <em>and</em> the negotiator.&rdquo;
       </p>
       <h3>3. &ldquo;Work on the task until the pomodoro rings&rdquo;</h3>
-      <p><em>Translation:</em></p>
       <p>
         &ldquo;Hyperfocus for 25 minutes. Or, more accurately: Spend 15 minutes
         working, 7 minutes wondering if you&rsquo;re allergic to productivity,
@@ -229,14 +214,13 @@
         isn&rsquo;t corporate voyeurism.
       </p>
     </blockquote>
-    <blockquote>
-      &ldquo;I know lets build a pomodoro timer with quotes from Lock
-      Stock.&rdquo;
-      <figcaption>&mdash; No-one ever</figcaption>
-    </blockquote>
-    <!--<div class="notifications">
-        <p>I know lets build a pomodoro timer with quotes from Lock Stock.<br>&mdash; No-one ever</p>
-    </div>-->
+    <div class="notifications">
+      <blockquote>
+        &ldquo;I know, lets build a pomodoro timer with quotes from Lock
+        Stock.&rdquo;
+        <figcaption>&mdash; No-one ever
+      </blockquote>
+    </div>
     <audio id="alarm">
       <source src="audio/alarm-clock-01.mp3" type="audio/mpeg" />
       <source src="audio/alarm-clock-01.ogg" type="audio/ogg" />
