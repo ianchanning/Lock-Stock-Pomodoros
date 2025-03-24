@@ -2,9 +2,6 @@
 /*html,body,div,span,applet,object,iframe, h1,h2,h3,h4,h5,h6,p,blockquote,pre, a,abbr,acronym,address,big,cite,code, del,dfn,em,font,img,ins,kbd,q,s,samp, small,strike,strong,sub,sup,tt,var, dl,dt,dd,ol,ul,li, fieldset,form,label,legend, table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}*/
 
 /* http://bettermotherfuckingwebsite.com/ */
-html {
-  background-color: #c7d1dc;
-}
 body {
   font-family: system-ui;
   margin: 40px auto;
@@ -13,7 +10,6 @@ body {
   font-size: 18px;
   color: #444;
   padding: 0;
-  border-radius: 2px;
 }
 h1,
 h2,
@@ -39,8 +35,12 @@ h1 {
   padding: 0 30px;
 }
 .chker {
+  border-radius: 8px;
+  background-color: #f3f3f3;
   padding: 1px;
   text-align: center;
+  position: relative;
+  height: 258px;
 }
 .chker > .clock {
   border-radius: 6px;
@@ -54,9 +54,6 @@ h1 {
 }
 /*@link https://dribbble.com/shots/1012575--Freebie-Timer*/
 /*light*/
-body {
-  background-color: #f3f3f3;
-}
 .chker > .clock {
   background-color: #e5e5e5;
   box-shadow:
@@ -157,6 +154,21 @@ a.button {
   border-radius: 4px;
 }
 
+.chker:before,
+.chker:after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  height: 261px;
+  width: 680px;
+  bottom: -1px;
+  border: 1px solid #cbcbcb;
+  border-bottom: 1px solid #a5a5a5;
+
+  border-radius: 8px;
+  pointer-events: none;
+}
+
 a.button:before,
 a.button:after {
   content: "";
@@ -167,6 +179,14 @@ a.button:after {
   bottom: -1px;
 
   border-radius: 4px;
+}
+
+.chker:before {
+  height: 258px;
+  bottom: -4px;
+  border-top: 0;
+
+  border-radius: 0 0 8px 8px;
 }
 
 a.button:before {
@@ -180,6 +200,10 @@ a.button:before {
 }
 
 /* GRAY */
+.chker {
+  border-bottom: 4px solid #b2b1b1;
+}
+
 a.gray,
 a.gray:hover,
 a.gray:visited {
@@ -244,17 +268,21 @@ a.button-activated:after {
 
 .notifications {
   background-color: #fff;
-  padding: 30px;
+  /* padding: 30px; */
 }
-.notifications p {
+blockquote {
   border-left: 3px solid rgba(0, 0, 0, 0.1);
   font-size: 1.5em;
   font-style: italic;
   padding-left: 1.4em;
 }
 
-.notifications > p::before {
+blockquote::before {
   content: "“";
   margin-left: -1.1em;
   padding-right: 0.55em;
+}
+
+figcaption {
+  color: #ddd;
 }
