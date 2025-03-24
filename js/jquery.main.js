@@ -152,13 +152,13 @@ import { chuck } from './chuck.js';
 
       // Append the time to the speaker name, wrapped in a span for easy styling
       return (
-        '<p>' +
+        '<blockquote>' +
         prettyQuote +
-        '<br>&mdash; ' +
+        '<figcaption>&mdash; ' +
         speaker +
         ' <span class="quote-time">@ ' +
         formattedTime +
-        '</span></p>'
+        '</span></figcaption></blockquote>'
       );
     };
 
