@@ -156,7 +156,7 @@ a.button {
 
 .chker:before,
 .chker:after {
-  content: "";
+  content: '';
   position: absolute;
   left: -1px;
   height: 261px;
@@ -171,7 +171,7 @@ a.button {
 
 a.button:before,
 a.button:after {
-  content: "";
+  content: '';
   position: absolute;
   left: -1px;
   height: 32px;
@@ -278,7 +278,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: "“";
+  content: '“';
   margin-left: -1.1em;
   padding-right: 0.55em;
 }
