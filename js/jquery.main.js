@@ -156,7 +156,7 @@ import { chuck } from './chuck.js';
       return (
         '<blockquote>&ldquo;' +
         prettyQuote +
-        '&rdquo;<figcaption>&mdash; ' +
+        '&rdquo;<figcaption>&mdash; says ' +
         speaker +
         ' <cite>@ ' +
         formattedTime +
