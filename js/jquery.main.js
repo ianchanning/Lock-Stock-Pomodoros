@@ -15,7 +15,14 @@ import { chuck } from './chuck.js';
     var start = timer.find('.start');
     var stop = timer.find('.stop');
 
-    var files = ['bacon', 'bacon', 'eddie', 'soap', 'tom', 'rory_breaker'];
+    var files = [
+      'bacon.txt',
+      'bacon.txt',
+      'eddie.txt',
+      'soap.txt',
+      'tom.txt',
+      'rory_breaker.txt',
+    ];
     var alarm = document.getElementById('alarm');
 
     var queryString = function () {
@@ -78,12 +85,15 @@ import { chuck } from './chuck.js';
       });
     };
 
-    var quotes = loadQuotes(quotesFile());
+    var fileName = quotesFile();
+    var quotes;
 
-    var quoteParam = param('quote');
-    if (quoteParam) {
-      $(".tabs a[href*='?quote=" + quoteParam + "']").addClass('active');
-    }
+    // :scream: Validate your inputs son...
+    $.get('quotes/' + fileName, function (data) {
+      quotes = Hjson.parse('[' + data + ']');
+    });
+
+    $(".tabs a[href*='?quote=" + param('quote') + "']").addClass('active');
 
     Notification.requestPermission();
 
@@ -174,7 +184,9 @@ import { chuck } from './chuck.js';
         stopTimer();
       }
 
-      alarm.play();
+      if (shouldPlaySound()) {
+        alarm.play();
+      }
 
       var randomQuote = quoteChooser();
       var options = {
