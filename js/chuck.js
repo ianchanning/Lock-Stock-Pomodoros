@@ -123,7 +123,11 @@ const chuck = () => {
    * @param  {Object} displayHand zero padded value after tick
    */
   const _print = (unitElement, displayHand) => {
-    unitElement.innerHTML = displayHand;
+    if (unitElement.tagName === 'INPUT') {
+      unitElement.value = displayHand;
+    } else {
+      unitElement.innerHTML = displayHand;
+    }
   };
 
   /**
@@ -136,7 +140,11 @@ const chuck = () => {
    * @param  {Object} unitElement JavaScript element
    * @return {Number}             The integer value
    */
-  const _hand = (unitElement) => parseFloat(unitElement.innerText);
+  const _hand = (unitElement) => parseFloat(
+    unitElement.tagName === 'INPUT'
+      ? unitElement.value
+      : unitElement.innerText
+  );
 
   /**
    * Convert a value to a power of 10

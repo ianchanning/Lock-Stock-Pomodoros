@@ -6,51 +6,187 @@
     <title>Lock Stock Pomodoros : ianchanning</title>
     <link href="images/favicon.ico" type="image/x-icon" rel="icon" />
     <link href="images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-    <link type="text/css" href="css/style.css?ver=0.4" rel="stylesheet" />
+    <style type="text/css">
+      body {
+        color: #333;
+        font-size: 1rem;
+        margin: 2.5rem auto;
+        max-width: 720px;
+        line-height: 1.5;
+        font-family: system-ui, sans-serif;
+        padding: 0.625rem 1rem;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+      a {
+        text-decoration: none;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: normal;
+      }
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border-top: 1px solid #ddd;
+        padding: 0.625rem 1rem;
+      }
+      fieldset {
+        padding: 0.625rem 1rem;
+        border: none;
+      }
+      input,
+      textarea,
+      select,
+      button {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: system-ui, sans-serif;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        line-height: 1.5;
+      }
+      label,
+      button {
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+      button {
+        background: #f5f5f5;
+      }
+      button:hover {
+        background: #e5e5e5;
+      }
+      label {
+        display: block;
+      }
+      input,
+      textarea {
+        width: 96%;
+      }
+      select {
+        width: 100%;
+      }
+      label input {
+        width: auto;
+      }
+      ul.tabs {
+        display: flex;
+        padding: 0;
+        margin: 0 0 0.625rem 0;
+        list-style: none;
+      }
+
+      ul.tabs li a {
+        padding: 0.5rem 1rem;
+        display: inline-block;
+      }
+
+      ul.tabs li a.active {
+        color: #333;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+    <style type="text/css">
+      .reminder {
+        display: none;
+      }
+
+      #min,
+      #sec,
+      #pomo {
+        width: 2ch;
+      }
+
+      figcaption {
+        font-size: 80%;
+        color: #999;
+      }
+    </style>
   </head>
   <body class="light">
     <div id="chker" class="chker">
-      <div class="clock">
-        <ul>
-          <li><a href="?bacon">bacon</a></li>
-          <li><a href="?eddie">eddie</a></li>
-          <li><a href="?soap">soap</a></li>
-          <li><a href="?tom">tom</a></li>
-          <li><a href="?rory_breaker">rory</a></li>
-        </ul>
-        <span class="time"
-          ><span
-            class="min"
-            title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall"
-            >25</span
-          >:<span class="sec" title="tick... tick... tick...">00</span>
-        </span>
-        <span
-          class="pomo"
-          title="I swear I did, like, 5 pomodoros in a row once"
-          >00</span
-        ><a href="javascript:void(0);" id="reminder">+</a>
-      </div>
-      <div class="buttons">
-        <a
-          href="javascript:void(0);"
-          class="start button gray"
-          title="RSI tip: Space bar works too"
-          >Start</a
-        >
-        <a
-          href="javascript:void(0);  "
-          class="stop button gray"
-          title="Hammertime"
-          >Stop</a
-        >
-      </div>
+      <ul class="tabs">
+        <li><a href="?quote=0">Bacon</a></li>
+        <li><a href="?quote=1">Eddie</a></li>
+        <li><a href="?quote=2">Soap</a></li>
+        <li><a href="?quote=3">Tom</a></li>
+        <li><a href="?quote=4">Rory</a></li>
+      </ul>
+      <form>
+        <fieldset>
+          <div class="clock">
+            <div class="time">
+              <input
+                id="min"
+                class="min"
+                type="text"
+                value="25"
+                title="25 minutes sitting on a wall, and if one of those minutes should accidentally fall"
+              />
+              <span class="separator">:</span>
+              <input
+                id="sec"
+                class="sec"
+                type="text"
+                value="00"
+                disabled
+                readonly
+                title="tick... tick... tick..."
+              />
+              <span class="separator">&nbsp;</span>
+              <input
+                id="pomo"
+                class="pomo"
+                type="text"
+                value="00"
+                disabled
+                readonly
+                title="I swear I did, like, 5 pomodoros in a row once"
+              />
+              <a href="javascript:void(0);" id="reminder">+</a>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="buttons">
+            <button
+              type="button"
+              class="start button gray"
+              title="RSI tip: Space bar works too"
+            >
+              Start
+            </button>
+            <button type="button" class="stop button gray" title="Hammertime">
+              Stop
+            </button>
+          </div>
+        </fieldset>
+      </form>
     </div>
-    <div class="reminder">
-      <blockquote>
-        I know lets build a pomodoro timer with quotes from Lock Stock.
-        <figcaption>&mdash; No-one ever</figcaption>
-      </blockquote>
+    <blockquote class="reminder">
+      <p>
+        &ldquo;I know, lets build a pomodoro timer with quotes from Lock
+        Stock.&rdquo;
+        <figcaption>&mdash; says No-one ever</figcaption>
+      </p>
       <p>
         <a href="http://pomodorotechnique.com/get-started/">Reminder</a> to
         self:
@@ -83,7 +219,7 @@
         distraction list afterward. Fire purifies all sins, including your
         impulse to reorganize the fridge <em>mid-task</em>.&rdquo;
       </p>
-    </div>
+    </blockquote>
     <div class="notifications"></div>
     <audio id="alarm">
       <source src="audio/alarm-clock-01.mp3" type="audio/mpeg" />

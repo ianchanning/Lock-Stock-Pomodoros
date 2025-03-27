@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Better Mofo Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+      body {
+        color: #444;
+        font-size: 18px;
+        margin: 40px auto;
+        max-width: 720px;
+        line-height: 1.4;
+        font-family: sans-serif;
+        padding: 10px 16px;
+      }
+      h1,h2,h3 {
+        line-height: 1.2
+      }
+      a {
+        text-decoration: none;
+      }
+      h1,h2,h3,h4,h5,h6 {
+        font-weight: normal;
+      }
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+      th, td {
+        border-top: 1px solid #444;
+        padding: 10px 16px;
+      }
+      input, textarea, select, button {
+        font-family: sans-serif;
+        font-size: 18px;
+        color: #666;
+        padding: 10px 2%;
+        line-height: 1.4;
+      }
+      label, button {
+        margin-top: 10px;
+      }
+      label {
+        display: block;
+      }
+      fieldset {
+        padding: 10px 16px;
+        border: none;
+      }
+      input, textarea {
+        width: 96%;
+      }
+      select {
+        width: 100%;
+      }
+      label input {
+        width: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="bootstrap-button.css">
+  </head>
+  <body>
+
+    <div>
+
+      <div id="banner">
+        <div>
+          <div>
+            <h1>Better Motherfucking Forms</h1>
+            <p>Excuse the title but it&rsquo;s entire inspiration is from <a href="http://motherfuckingwebsite.com">motherfuckingwebsite.com</a> and <a href="http://bettermotherfuckingwebsite.com">bettermotherfuckingwebsite.com</a>.</p>
+            <p>This is an exercise in Bootstrap minimalism. Bootstrap is lovely, this is just inpired by it to see what you can achieve with as little as possible. It shows that it&rsquo;s not that hard to get basic forms that look ok. 52 lines of CSS. No HTML classes required. There&rsquo;s further optimisations possible to reduce the lines of code but I&rsquo;m keeping the sections separate.</p>
+            <p>With asynchronous CSS you can use it to inline your CSS styles before Bootstrap loads. The HTML behind this is taken from Bootswatch with all the classes taken out - so this will work with your Bootstrap - just without the grid. Only folks on mobile would probably ever notice and you don&rsquo;t need much of a grid on mobile. You can use it for UX mockups so that clients don&rsquo;t focus on the details but will get an idea of what the application looks like.</p>
+            <p>The form here displays all the elements that the base Bootswatch form displays. It works for all your HTML 5 elements.</p>
+            <ul>
+              <li>Shit&rsquo;s <em>still</em> lightweight and loads fast</li>
+              <li><em>Still</em> fits on all your shitty screens</li>
+              <li><em>Still</em> looks the same in all your shitty browsers</li>
+              <li>The motherfucker&rsquo;s <em>still</em> accessible to every asshole that visits your site</li>
+              <li>Shit&rsquo;s <em>still</em> legible and gets your fucking point across</li>
+            </ul>
+            <table>
+              <thead>
+                <tr>
+                  <th>Site / section</th>
+                  <th>Lines of CSS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mofo website</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>Better Mofo website</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>Fonts</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>Tables</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <td>Forms</td>
+                  <td>26</td>
+                </tr>
+                <tr>
+                  <td><strong>Total</strong></td>
+                  <td><strong>53</strong></td>
+                </tr>
+                <tr>
+                  <td colspan="2">Added in just for kicks and for comparison ...</td>
+                </tr>
+                <tr>
+                  <td>... Bootstrap default button</td>
+                  <td>44</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Typography
+      ================================================== -->
+      <div>
+        <div>
+          <div>
+            <div>
+              <h1 id="typography">Typography</h1>
+            </div>
+          </div>
+        </div>
+
+        <!-- Headings -->
+
+        <div>
+          <div>
+            <div>
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <h2>Example body text</h2>
+              <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+              <p><small>This line of text is meant to be treated as fine print.</small></p>
+              <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+              <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+              <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Preformat -->
+
+        <div>
+          <div>
+            <div>
+              <h2>Code / Preformat</h2>
+              <p>Inline</p>
+              <p><code>[1,2,3].map(function(x) {return x * x;});</code></p>
+              <p>Preformat</p>
+              <pre>
+[1,2,3]
+  .map(
+    function(x) {
+      return x * x;
+    }
+  );
+              </pre>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Blockquotes -->
+
+        <div>
+          <div>
+            <h2 id="type-blockquotes">Blockquotes</h2>
+          </div>
+        </div>
+        <div>
+          <div>
+            <div>
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tables
+      ================================================== -->
+      <div>
+
+        <div>
+          <div>
+            <div>
+              <h1 id="tables">Tables</h1>
+            </div>
+
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                    <th>Column heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                    <td>Column content</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><!-- /example -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Forms
+      ================================================== -->
+      <div>
+        <div>
+          <div>
+            <div>
+              <h1 id="forms">Forms</h1>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div>
+              <form>
+                <fieldset>
+                  <legend>Legend</legend>
+                  <div>
+                    <label for="inputEmail">Email</label>
+                    <div>
+                      <input type="text" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div>
+                    <label for="inputPassword">Password</label>
+                    <div>
+                      <input type="password" id="inputPassword" placeholder="Password">
+                      <div>
+                        <label>
+                          <input type="checkbox"> Checkbox
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Radios</label>
+                    <div>
+                      <div>
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                          Option one is this
+                        </label>
+                      </div>
+                      <div>
+                        <label>
+                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                          Option two can be something else
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="exampleSelect1">Example select</label>
+                    <select id="exampleSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="exampleSelect2">Example multiple select</label>
+                    <select id="exampleSelect2" multiple="">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="textArea">Example textarea</label>
+                    <textarea rows="3" id="textArea"></textarea>
+                  </div>
+                  <div>
+                    <label for="exampleInputFile">File input</label>
+                    <input id="exampleInputFile" type="file">
+                  </div>
+                  <div>
+                    <div>
+                      <button type="reset">Browser button</button>
+                      &nbsp;<button type="submit" class="btn">Bootstrap button</button>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+          <div>
+
+              <form>
+                <div>
+                  <label for="disabledInput">Disabled input</label>
+                  <input id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                </div>
+
+              </form>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Navs
+      ================================================== -->
+      <div class="bs-docs-section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header">
+              <h1 id="navs">Navs</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <h2 id="nav-tabs">Tabs</h2>
+            <div class="bs-component">
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="tab" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <h6 class="dropdown-header">Dropdown header</h6>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade show active" id="home">
+                  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown1">
+                  <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                </div>
+                <div class="tab-pane fade" id="dropdown2">
+                  <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <h2 id="nav-pills">Pills</h2>
+            <div class="bs-component">
+              <ul class="nav nav-pills">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <h6 class="dropdown-header">Dropdown header</h6>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+            <br>
+            <div class="bs-component">
+              <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <h6 class="dropdown-header">Dropdown header</h6>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
+            <div class="bs-component">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Home</li>
+              </ol>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Library</li>
+              </ol>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active">Data</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <h2 id="pagination">Pagination</h2>
+            <div class="bs-component">
+              <div>
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <ul class="pagination pagination-lg">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <ul class="pagination pagination-sm">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div>
+          <div>
+
+            <p>Based on <a href="http://bootswatch.com/" rel="nofollow">Bootswatch</a> by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. </p>
+            <p>Stripped down like a mofo by <a href="http://ianchanning.com" rel="nofollow">Ian Channing</a>.</p>
+            <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>.</p>
+
+          </div>
+        </div>
+
+      </footer>
+
+
+    </div>
+
+
+</html>
+

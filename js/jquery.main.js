@@ -15,26 +15,85 @@ import { chuck } from './chuck.js';
     var start = timer.find('.start');
     var stop = timer.find('.stop');
 
-    var defaultFile = 'bacon';
+    var files = [
+      'bacon.txt',
+      'bacon.txt',
+      'eddie.txt',
+      'soap.txt',
+      'tom.txt',
+      'rory_breaker.txt',
+    ];
     var alarm = document.getElementById('alarm');
 
     var queryString = function () {
-      return location.search;
+      return window.location.search;
+    };
+
+    var param = function (key) {
+      var urlParams = new URLSearchParams(queryString());
+      return urlParams.get(key);
     };
 
     var quotesFile = function () {
-      return queryString() ? queryString().substr(1) : defaultFile;
+      return files[parseInt(param('quote'))];
+    };
+
+    var shouldPlaySound = function () {
+      return !['true', '1', ''].includes(param('silent'));
+    };
+
+    // :scream: Validate your inputs son...
+    var loadQuotes = function (fileName) {
+      // 1. Check for null or undefined
+      if (!fileName) {
+        console.error('Filename is missing.');
+        return [];
+      }
+
+      // 2. Check for potentially malicious characters (Defense in Depth)
+      const forbiddenCharacters = /[^\w\-.]/; // Allow only alphanumeric, dash, underscore, and dot
+      if (forbiddenCharacters.test(fileName)) {
+        console.error('Invalid characters in filename.');
+        return [];
+      }
+
+      // 3. Check for ".." sequences (Defense in Depth)
+      if (fileName.includes('..')) {
+        console.error('Directory traversal attempt detected.');
+        return [];
+      }
+
+      // 4. Check file extension (Defense in Depth)
+      if (!fileName.endsWith('.txt')) {
+        console.error('Invalid file extension.  Only .txt files are allowed.');
+        return [];
+      }
+
+      // If all checks pass (Defense in Depth - Client Side. SERVER SIDE is key)
+      $.get('quotes/' + fileName, function (data) {
+        try {
+          return Hjson.parse('[' + data + ']');
+        } catch (error) {
+          console.error('Error parsing Hjson:', error);
+          // Handle the parsing error gracefully (e.g., display an error message)
+          return [];
+        }
+      }).fail(function (_, textStatus, errorThrown) {
+        console.error('get failed:', textStatus, errorThrown);
+        // Handle the AJAX error (e.g., display an error message)
+        return [];
+      });
     };
 
     var fileName = quotesFile();
     var quotes;
 
-    $.get('quotes/' + fileName + '.txt', function (data) {
+    // :scream: Validate your inputs son...
+    $.get('quotes/' + fileName, function (data) {
       quotes = Hjson.parse('[' + data + ']');
     });
 
-    $('.clock a').removeClass('active');
-    $(".clock a[href='?" + fileName + "']").addClass('active');
+    $(".tabs a[href*='?quote=" + param('quote') + "']").addClass('active');
 
     Notification.requestPermission();
 
@@ -67,8 +126,11 @@ import { chuck } from './chuck.js';
      * display the timer in the title
      */
     var updateTitle = function () {
-      document.title =
-        timer.find('.time').text() + ' - ' + appName + ' : ' + siteName;
+      var timerText = Array.from(document.querySelector('.time').childNodes)
+        .filter((node) => node.tagName !== 'A')
+        .map((node) => node.value || node.textContent.trim())
+        .join(' ');
+      document.title = timerText + ' - ' + appName + ' : ' + siteName;
     };
 
     /**
@@ -118,11 +180,13 @@ import { chuck } from './chuck.js';
 
     var randomNotification = function () {
       // don't stop after the first notification
-      if (parseInt(pp.innerText) >= 1) {
+      if (parseInt(pp.value) >= 1) {
         stopTimer();
       }
 
-      alarm.play();
+      if (shouldPlaySound()) {
+        alarm.play();
+      }
 
       var randomQuote = quoteChooser();
       var options = {
@@ -152,13 +216,13 @@ import { chuck } from './chuck.js';
 
       // Append the time to the speaker name, wrapped in a span for easy styling
       return (
-        '<blockquote>' +
+        '<blockquote>&ldquo;' +
         prettyQuote +
-        '<figcaption>&mdash; ' +
+        '&rdquo;<figcaption>&mdash; says ' +
         speaker +
-        ' <span class="quote-time">@ ' +
+        ' <cite>@ ' +
         formattedTime +
-        '</span></figcaption></blockquote>'
+        '</cite></figcaption></blockquote>'
       );
     };
 
