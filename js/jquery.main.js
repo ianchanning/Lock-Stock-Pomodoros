@@ -35,7 +35,11 @@ import { chuck } from './chuck.js';
     };
 
     var quotesFile = function () {
-      return files[parseInt(param('quote'))];
+      return files[
+        parseInt(
+          param('quote') ? param('quote') : Math.random() * (files.length - 1)
+        )
+      ];
     };
 
     var shouldPlaySound = function () {
