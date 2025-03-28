@@ -40,14 +40,14 @@ h1 {
   padding: 1px;
   text-align: center;
   position: relative;
-  height: 258px;
+  height: 210px;
 }
 .chker > .clock {
   border-radius: 6px;
   font-family: sans;
   font-weight: 100;
   line-height: 1;
-  margin: 70px auto 0;
+  margin: 20px auto 0;
   padding: 0;
   text-align: center;
   width: 54%;
@@ -159,7 +159,7 @@ a.button {
   content: '';
   position: absolute;
   left: -1px;
-  height: 261px;
+  height: 213px;
   width: 680px;
   bottom: -1px;
   border: 1px solid #cbcbcb;
@@ -182,7 +182,7 @@ a.button:after {
 }
 
 .chker:before {
-  height: 258px;
+  height: 210px;
   bottom: -4px;
   border-top: 0;
 
