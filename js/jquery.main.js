@@ -17,7 +17,6 @@ import { chuck } from './chuck.js';
 
     var files = [
       'bacon.txt',
-      'bacon.txt',
       'eddie.txt',
       'soap.txt',
       'tom.txt',
@@ -35,11 +34,9 @@ import { chuck } from './chuck.js';
     };
 
     var quotesFile = function () {
-      return files[
-        parseInt(
-          param('quote') ? param('quote') : Math.random() * (files.length - 1)
-        )
-      ];
+      var i = param('says');
+      var defaultIndex = Math.floor(Math.random() * files.length);
+      return files[parseInt(i !== null ? i : defaultIndex)];
     };
 
     var shouldPlaySound = function () {
@@ -89,15 +86,22 @@ import { chuck } from './chuck.js';
       });
     };
 
-    var fileName = quotesFile();
-    var quotes;
+    var fetchQuotes = function (fileName) {
+      return new Promise((resolve, reject) => {
+        // :scream: Validate your inputs son...
+        $.get('quotes/' + fileName, function (data) {
+          try {
+            // Assuming data is newline separated strings
+            const quotes = Hjson.parse('[' + data + ']');
+            resolve(quotes);
+          } catch (error) {
+            reject(error);
+          }
+        }).fail(reject);
+      });
+    };
 
-    // :scream: Validate your inputs son...
-    $.get('quotes/' + fileName, function (data) {
-      quotes = Hjson.parse('[' + data + ']');
-    });
-
-    $(".tabs a[href*='?quote=" + param('quote') + "']").addClass('active');
+    $(".tabs a[href*='says=" + param('says') + "']").addClass('active');
 
     Notification.requestPermission();
 
@@ -192,15 +196,24 @@ import { chuck } from './chuck.js';
         alarm.play();
       }
 
-      var randomQuote = quoteChooser();
-      var options = {
-        body: randomQuote,
-      };
+      var fileName = quotesFile();
+      fetchQuotes(fileName)
+        .then((quotes) => {
+          var randomQuote = quoteChooser(quotes);
+          var options = {
+            body: randomQuote,
+          };
 
-      var n = new Notification(quoter(fileName) + ' says', options);
-      setTimeout(n.close.bind(n), 10000);
+          var n = new Notification(quoter(fileName) + ' says', options);
+          setTimeout(n.close.bind(n), 10000);
 
-      $('.notifications').prepend(formatQuote(randomQuote, quoter(fileName)));
+          $('.notifications').prepend(
+            formatQuote(randomQuote, quoter(fileName))
+          );
+        })
+        .catch((error) => {
+          console.error('Failed to fetch quotes:', error);
+        });
     };
 
     /**
@@ -230,7 +243,7 @@ import { chuck } from './chuck.js';
       );
     };
 
-    var quoteChooser = function () {
+    var quoteChooser = function (quotes) {
       var randomNumber = Math.floor(Math.random() * quotes.length);
       var quote = quotes[randomNumber];
       return quote;
