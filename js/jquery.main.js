@@ -207,9 +207,15 @@ import { chuck } from './chuck.js';
           var n = new Notification(quoter(fileName) + ' says', options);
           setTimeout(n.close.bind(n), 10000);
 
-          $('.notifications').prepend(
-            formatQuote(randomQuote, quoter(fileName))
-          );
+          const notificationsElement = document.querySelector('.notifications');
+          if (notificationsElement) {
+            notificationsElement.insertAdjacentHTML(
+              'afterbegin',
+              formatQuote(randomQuote, quoter(fileName))
+            );
+          } else {
+            console.error('Element with class "notifications" not found.');
+          }
         })
         .catch((error) => {
           console.error('Failed to fetch quotes:', error);
